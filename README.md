@@ -1,13 +1,14 @@
 
-# TDD - Cadeia de caracteres
+# TDD - Multiplicação de matrizes
 
 Este é o código exemplo do trabalho usando TDD (*Test Driven Development*) com o framework C++ [Catch2](https://github.com/catchorg/Catch2).
 
 ## Tarefa
 
-Modifique o arquivo [cadeias.c](cadeias.c) para completar as funções:
-- `concatena`: junta duas cadeias e retorna um ponteiro alocado dinamicamente com a união dos dois
-- `quebra_palavras`: quebra um texto usando um caracter como separaddor, deve retornar um vetor de palavras alocado dinamicamente.
+Modifique o arquivo [matriz.c](matriz.c) para completar as funções:
+- `matriz_aloca`: aloca memória para uma matriz `A[N][N]` e retorna um `**int`
+- `matriz_libera`: libera memória alocada previamente por `**A`
+- `matriz_multiplica`: multiplica as matrizes `A` e  `B` no formato `C = AB + C`
 
 O resultado estará disponível na aba **Actions** do Github a cada alteração.
 
@@ -22,7 +23,7 @@ O teste pode ser feito localmente com os comandos abaixo:
 ```
 g++ -Wall -g -c catch_amalgamated.cpp
 g++ -Wall -g -c testes.cpp
-gcc -Wall -g -c cadeias.c
-g++ -Wall -g cadeias.o testes.o  catch_amalgamated.o
+gcc -Wall -g -c matriz.c
+g++ -Wall -g matriz.o testes.o  catch_amalgamated.o
 valgrind --leak-check=full ./a.out --reporter compact --success
 ```
